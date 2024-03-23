@@ -4,6 +4,9 @@ import java.sql.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -11,6 +14,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "automovil")
 public class AutomovilModelo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idAutomovil;
+    
     @Column(name = "color")
     private String color;
 
